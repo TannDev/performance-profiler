@@ -27,11 +27,12 @@ pipeline {
         }
 
         stage('Release') {
-            when {
-                branch 'master'
-            }
+//            when {
+//                branch 'master'
+//            }
             steps {
-                // Run Semantic release
+                echo '\nBuilding...'
+                setBuildStatus('Publishing...', 'PENDING')
                 script {
                     credentials = [
                             string(credentialsId: 'github-personal-access-token', variable: 'GITHUB_TOKEN'),
@@ -41,9 +42,11 @@ pipeline {
                 withCredentials(credentials) {
                     sh 'npx semantic-release'
                 }
+
+                echo '\nFinishing up...'
                 script {
                     RELEASE_VERSION = sh ( script: "git tag --points-at", returnStdout: true ).trim()
-                    RELEASE_URL = 'https://github.com/Tanndev/performance-profiler/releases/tag/' + RELEASE_VERSION
+                    RELEASE_URL = "https://github.com/Tanndev/performance-profiler/releases/tag/${RELEASE_VERSION}"
                     echo "Version: ${RELEASE_VERSION} can be viewed at ${RELEASE_URL}"
                     currentBuild.displayName = RELEASE_VERSION
                     currentBuild.description = RELEASE_URL
