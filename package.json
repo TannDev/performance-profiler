@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/Tanndev/performance-profiler.git"
+    "url": "git+https://github.com/tanndev/performance-profiler.git"
   },
   "keywords": [
     "benchmarking",
