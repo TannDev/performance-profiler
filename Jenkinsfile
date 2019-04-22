@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        docker { image 'node:10-alpine' }
+        docker { image 'jftanner/jenkins-agent'}
     }
 
     environment {
