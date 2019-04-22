@@ -30,6 +30,9 @@ pipeline {
             when {
                 branch 'master'
             }
+            environment {
+                npm_config_loglevel='verbose'
+            }
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Publishing...', 'PENDING')
