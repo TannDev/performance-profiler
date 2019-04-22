@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo '\nTesting...'
-                setBuildStatus('Building...', 'TESTING')
+                setBuildStatus('Testing...', 'PENDING')
                 sh 'npm test'
             }
         }
