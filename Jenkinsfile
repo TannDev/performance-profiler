@@ -5,6 +5,10 @@ pipeline {
         docker { image 'node:10-alpine' }
     }
 
+    environment {
+        HOME="."
+    }
+
     stages {
         stage('Build') {
             steps {
