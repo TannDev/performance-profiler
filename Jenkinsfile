@@ -31,7 +31,7 @@ pipeline {
                 branch 'master'
             }
             environment {
-                npm_config_loglevel='verbose'
+                npm_config_loglevel=verbose
             }
             steps {
                 echo '\nBuilding...'

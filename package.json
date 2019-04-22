@@ -1,5 +1,6 @@
 {
   "name": "performance-profiler",
+  "private": true,
   "description": "A simple tool for generating performance metrics using multiple timers.",
   "main": "Profiler.js",
   "scripts": {
