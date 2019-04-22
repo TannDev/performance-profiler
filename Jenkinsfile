@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '\nBuilding...'
+                setBuildStatus('Building...', 'PENDING')
                 sh 'npm install'
             }
         }
@@ -20,6 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo '\nTesting...'
+                setBuildStatus('Building...', 'TESTING')
                 sh 'npm test'
             }
         }
@@ -49,4 +51,17 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            setBuildStatus("Passed", "SUCCESS")
+        }
+        failure {
+            setBuildStatus( "Failed", "FAILED")
+        }
+    }
+}
+
+void setBuildStatus(String message, String status) {
+    githubNotify context: 'Jenkins CI', description: message,  status: status
 }
