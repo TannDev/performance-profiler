@@ -30,9 +30,6 @@ pipeline {
             when {
                 branch 'master'
             }
-            environment {
-                npm_config_loglevel="verbose"
-            }
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Publishing...', 'PENDING')
@@ -43,7 +40,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh 'npx semantic-release'
+                    sh 'npx semantic-release --debug'
                 }
 
                 echo '\nFinishing up...'
