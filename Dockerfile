@@ -27,4 +27,6 @@ RUN addgroup --gid $GID $USER \
 USER $USER
 
 # Add global NPM packages
+ARG NPM_HOME=~/.npm-global
+RUN $NPM_HOME && npm config set prefix $NPM_HOME
 RUN npm install -g semantic-release semantic-release-docker
