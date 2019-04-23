@@ -7,6 +7,9 @@ pipeline {
 //            args '-v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
         }
     }
+    environment {
+        HOME = '.'
+    }
 
     stages {
         stage('Build') {
