@@ -13,6 +13,7 @@ pipeline {
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Building...', 'PENDING')
+                sh 'rm -r .git/hooks'
                 sh 'npm install'
             }
         }
