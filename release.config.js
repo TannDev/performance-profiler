@@ -16,11 +16,10 @@ const GITHUB = [
 
 module.exports = {
     branch: 'master',
-    repositoryUrl: 'git@github.com:Tanndev/performance-profiler.git',
     plugins: [
         COMMIT_ANALYZER,
         RELEASE_NOTES_GENERATOR,
-        // NPM,
+        NPM,
         GITHUB
     ]
 };
