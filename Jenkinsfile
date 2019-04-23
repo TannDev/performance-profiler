@@ -2,10 +2,7 @@
 
 pipeline {
     agent {
-        docker {
-            image 'jftanner/jenkins-agent'
-            args '-u root:root'
-        }
+        docker { image 'jftanner/jenkins-agent' }
     }
 
     stages {
@@ -18,7 +15,7 @@ pipeline {
                 sh 'npm install'
 
                 // Disable git hooks in Jenkins, as they interfere with semantic-release.
-                sh 'rm -r .git/hooks'
+                sh 'rm -rf .git/hooks'
             }
         }
 
