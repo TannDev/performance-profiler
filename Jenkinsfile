@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent {
-        label 'docker'
-    }
+    agent any
 
     stages {
         stage('Build') {
