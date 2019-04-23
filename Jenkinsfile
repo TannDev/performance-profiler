@@ -2,12 +2,14 @@
 
 pipeline {
     agent {
-        docker { image 'jftanner/jenkins-agent' }
+        dockerfile {
+            filename 'Dockerfile.Jenkins-agent'
+            args '-v ${PWD}:/usr/workspace -w /usr/workspace'
+        }
     }
 
-    environment { HOME = '.' }
-
     stages {
+        stage('Checkout')
         stage('Build') {
             steps {
                 echo '\nBuilding...'
