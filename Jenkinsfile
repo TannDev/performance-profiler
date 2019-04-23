@@ -3,8 +3,8 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'Dockerfile.Jenkins-agent'
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
+            image 'jftanner/jenkins-agent'
+            args '-v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
         }
     }
 
@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '\nBuilding...'
-//                setBuildStatus('Building...', 'PENDING')
+                setBuildStatus('Building...', 'PENDING')
 //                sh 'npm install'
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo '\nTesting...'
-//                setBuildStatus('Testing...', 'PENDING')
+                setBuildStatus('Testing...', 'PENDING')
 //                sh 'npm test -- --quickly'
             }
         }
@@ -31,12 +31,11 @@ pipeline {
             }
             steps {
                 echo '\nBuilding...'
-//                setBuildStatus('Publishing...', 'PENDING')
+                setBuildStatus('Publishing...', 'PENDING')
                 script {
                     credentials = [
-                            string(credentialsId: 'github-personal-access-token', variable: 'GITHUB_TOKEN'),
-                            string(credentialsId: 'npm-token', variable: 'NPM_TOKEN'),
-                            usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')
+//                            string(credentialsId: 'github-personal-access-token', variable: 'GITHUB_TOKEN'),
+                            string(credentialsId: 'npm-token', variable: 'NPM_TOKEN')
                     ]
                 }
                 withCredentials(credentials) {
