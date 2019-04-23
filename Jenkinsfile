@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo '\nTesting...'
                 setBuildStatus('Testing...', 'PENDING')
-                sh 'npm test -- --quickly'
+                sh 'npm test'
             }
         }
 
