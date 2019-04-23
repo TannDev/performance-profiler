@@ -2,8 +2,8 @@
 
 pipeline {
     agent {
-        dockerfile {
-            filename 'Dockerfile.Jenkins-agent'
+        docker {
+            image 'jftanner/jenkins-agent'
             args '-u root:root'
         }
     }
