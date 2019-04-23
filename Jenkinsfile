@@ -39,7 +39,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh 'npx semantic-release --dry-run'
+                    sh 'npx semantic-release'
                 }
 
                 echo '\nFinishing up...'
