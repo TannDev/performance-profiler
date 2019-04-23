@@ -2,10 +2,11 @@
 
 pipeline {
     agent {
-        docker { image 'jftanner/jenkins-agent' }
+        docker {
+            image 'jftanner/jenkins-agent'
+            args '-u root:root'
+        }
     }
-
-    environment { HOME = '.' }
 
     stages {
         stage('Build') {
