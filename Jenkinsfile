@@ -9,12 +9,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Build') {
             steps {
                 echo '\nBuilding...'
@@ -27,7 +21,7 @@ pipeline {
             steps {
                 echo '\nTesting...'
                 setBuildStatus('Testing...', 'PENDING')
-                sh 'npm test'
+                sh 'npm test -- --quickly'
             }
         }
 
