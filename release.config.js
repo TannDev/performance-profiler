@@ -20,7 +20,7 @@ module.exports = {
     plugins: [
         COMMIT_ANALYZER,
         RELEASE_NOTES_GENERATOR,
-        NPM,
+        // NPM,
         GITHUB
     ]
 };
