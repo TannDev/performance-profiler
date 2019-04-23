@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo '\nTesting...'
                 setBuildStatus('Testing...', 'PENDING')
-                sh 'npm test -- --quickly'
+//                sh 'npm test -- --quickly'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh 'npm run semantic-release -- --debug --dry-run'
+                    sh 'npx semantic-release --dry-run'
                 }
 
                 echo '\nFinishing up...'
