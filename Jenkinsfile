@@ -49,7 +49,7 @@ pipeline {
                 // Update the build information with the appropriate metadata.
                 echo '\nFinishing up...'
                 script {
-                    RELEASE_VERSION = sh ( script: "git tag --points-at", returnStdout: true ).trim()
+                    RELEASE_VERSION = sh ( script: "git tag --points-at HEAD", returnStdout: true ).trim()
                     if (RELEASE_VERSION) {
                         RELEASE_URL = "https://github.com/Tanndev/performance-profiler/releases/tag/${RELEASE_VERSION}"
                         echo "Version: ${RELEASE_VERSION} can be viewed at ${RELEASE_URL}"
