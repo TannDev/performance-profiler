@@ -4,7 +4,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile.Jenkins-agent'
-            args '-v ${PWD}:/usr/workspace -w /usr/workspace'
+            args '-u jenkins -v ${PWD}:/usr/workspace -w /usr/workspace'
         }
     }
 
