@@ -4,7 +4,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile.Jenkins-agent'
-//            args '-u 0:0'
+            args '-u root:root'
         }
     }
 
