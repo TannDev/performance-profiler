@@ -14,6 +14,9 @@ pipeline {
                 echo '\nBuilding...'
                 setBuildStatus('Building...', 'PENDING')
 
+                // Clean the workspace
+                cleanWs()
+
                 // Install dependencies.
                 sh 'npm install'
 
