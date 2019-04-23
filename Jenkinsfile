@@ -9,7 +9,10 @@ pipeline {
     }
 
     stages {
-        stage('Checkout')
+        stage('Checkout') {
+            checkout scm
+        }
+
         stage('Build') {
             steps {
                 echo '\nBuilding...'
