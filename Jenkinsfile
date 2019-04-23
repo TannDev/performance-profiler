@@ -27,14 +27,14 @@ pipeline {
                 setBuildStatus('Testing...', 'PENDING')
 
                 // Run the test suite.
-                sh 'npm test'
+                sh 'npm test -- --quickly'
             }
         }
 
         stage('Release') {
-            when {
-                branch 'master'
-            }
+//            when {
+//                branch 'master'
+//            }
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Publishing...', 'PENDING')
