@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             image 'jftanner/jenkins-agent'
-            args '-v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
+//            args '-v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
         }
     }
 
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo '\nTesting...'
                 setBuildStatus('Testing...', 'PENDING')
-//                sh 'npm test -- --quickly'
+                sh 'npm test -- --quickly'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh 'npx semantic-release --debug --dry-run'
+                    sh 'npx semantic-release --dry-run'
                 }
 
                 echo '\nFinishing up...'
