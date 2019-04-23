@@ -22,7 +22,7 @@ RUN addgroup --gid $GID $USER \
     && adduser \
     --disabled-password \
     --ingroup $USER \
-    --no-create-home \
+#    --no-create-home \
     --uid $UID \
     $USER
 USER $USER
