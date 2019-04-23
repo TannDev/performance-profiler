@@ -25,14 +25,14 @@ pipeline {
                 setBuildStatus('Testing...', 'PENDING')
 
                 // Run the test suite.
-                sh 'npm test -- --quickly'
+                sh 'npm test'
             }
         }
 
         stage('Release') {
-//            when {
-//                branch 'master'
-//            }
+            when {
+                branch 'master'
+            }
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Publishing...', 'PENDING')
@@ -45,7 +45,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh "npx semantic-release --branch ${env.BRANCH_NAME} --dry-run"
+                    sh "npx semantic-release"
                 }
 
                 // Update the build information with the appropriate metadata.
