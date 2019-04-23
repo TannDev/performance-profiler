@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             image 'jftanner/jenkins-agent'
-//            args '-v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
+            args '-v /var/lib/jenkins:/var/lib/jenkins' // -v /etc/passwd:/etc/passwd
         }
     }
 
