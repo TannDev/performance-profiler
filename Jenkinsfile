@@ -2,9 +2,8 @@
 
 pipeline {
     agent {
-        docker {
-            image 'jftanner/jenkins-agent'
-            args '-u root:root'
+        dockerfile {
+            additionalBuildArgs '--build-arg UID=$(id -u) --build-arg GID=$(id -g)'
         }
     }
 
