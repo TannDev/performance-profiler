@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Building...', 'PENDING')
-//                sh 'npm install'
+                sh 'npm install'
             }
         }
 
