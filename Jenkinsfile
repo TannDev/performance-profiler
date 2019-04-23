@@ -34,7 +34,7 @@ pipeline {
                 setBuildStatus('Publishing...', 'PENDING')
                 script {
                     credentials = [
-//                            string(credentialsId: 'github-personal-access-token', variable: 'GITHUB_TOKEN'),
+                            string(credentialsId: 'github-personal-access-token', variable: 'GITHUB_TOKEN'),
                             string(credentialsId: 'npm-token', variable: 'NPM_TOKEN')
                     ]
                 }
