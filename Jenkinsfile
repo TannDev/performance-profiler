@@ -13,8 +13,12 @@ pipeline {
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Building...', 'PENDING')
-                sh 'rm -r .git/hooks'
+
+                // Install dependencies.
                 sh 'npm install'
+
+                // Disable git hooks in Jenkins, as they interfere with semantic-release.
+                sh 'rm -r .git/hooks'
             }
         }
 
@@ -22,6 +26,8 @@ pipeline {
             steps {
                 echo '\nTesting...'
                 setBuildStatus('Testing...', 'PENDING')
+
+                // Run the test suite.
                 sh 'npm test'
             }
         }
@@ -33,6 +39,8 @@ pipeline {
             steps {
                 echo '\nBuilding...'
                 setBuildStatus('Publishing...', 'PENDING')
+
+                // Run semantic-release with the necessary credentials.
                 script {
                     credentials = [
                             string(credentialsId: 'github-personal-access-token', variable: 'GITHUB_TOKEN'),
@@ -43,13 +51,16 @@ pipeline {
                     sh 'npx semantic-release'
                 }
 
+                // Update the build information with the appropriate metadata.
                 echo '\nFinishing up...'
                 script {
                     RELEASE_VERSION = sh ( script: "git tag --points-at", returnStdout: true ).trim()
-                    RELEASE_URL = "https://github.com/Tanndev/performance-profiler/releases/tag/${RELEASE_VERSION}"
-                    echo "Version: ${RELEASE_VERSION} can be viewed at ${RELEASE_URL}"
-                    currentBuild.displayName = RELEASE_VERSION
-                    currentBuild.description = RELEASE_URL
+                    if (RELEASE_VERSION) {
+                        RELEASE_URL = "https://github.com/Tanndev/performance-profiler/releases/tag/${RELEASE_VERSION}"
+                        echo "Version: ${RELEASE_VERSION} can be viewed at ${RELEASE_URL}"
+                        currentBuild.displayName = RELEASE_VERSION
+                        currentBuild.description = RELEASE_URL
+                    }
                 }
             }
         }
