@@ -2,14 +2,10 @@
 
 pipeline {
     agent {
-        docker {
-            image 'jftanner/jenkins-agent'
-//            args '-v /etc/passwd:/etc/passwd -v /var/lib/jenkins:/var/lib/jenkins'
-        }
+        docker { image 'jftanner/jenkins-agent' }
     }
-    environment {
-        HOME = '.'
-    }
+
+    environment { HOME = '.' }
 
     stages {
         stage('Build') {
