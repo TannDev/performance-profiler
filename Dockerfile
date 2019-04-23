@@ -21,7 +21,7 @@ RUN addgroup --gid $GID $USER \
 #    --gecos "" \
 #    --home "$(pwd)" \
     --ingroup $USER \
-    --no-create-home \
+#    --no-create-home \
     --uid $UID \
     $USER
 USER $USER
