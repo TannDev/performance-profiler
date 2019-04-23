@@ -11,6 +11,9 @@ RUN apk add --no-cache docker
 RUN apk add --no-cache git
 RUN apk add --no-cache openssh
 
+# Add global NPM packages
+RUN npm install -g semantic-release semantic-release-docker
+
 # Create and switch to the Jenkins user
 ARG USER=jenkins
 ARG UID=1000
@@ -25,8 +28,3 @@ RUN addgroup --gid $GID $USER \
     --uid $UID \
     $USER
 USER $USER
-
-# Add global NPM packages
-ARG NPM_HOME=~/.npm-global
-RUN mkdir $NPM_HOME && npm config set prefix $NPM_HOME
-RUN npm install -g semantic-release semantic-release-docker
