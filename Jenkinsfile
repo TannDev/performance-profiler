@@ -47,7 +47,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh 'npx semantic-release'
+                    sh "npx semantic-release --branch ${env.BRANCH_NAME} --dry-run"
                 }
 
                 // Update the build information with the appropriate metadata.
