@@ -45,7 +45,7 @@ pipeline {
                     ]
                 }
                 withCredentials(credentials) {
-                    sh "npx semantic-release"
+                    sh 'npx semantic-release'
                 }
 
                 // Update the build information with the appropriate metadata.
