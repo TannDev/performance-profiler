@@ -2,7 +2,10 @@
 
 pipeline {
     agent {
-        docker { image 'jftanner/jenkins-agent', args '-v /etc/passwd:/etc/passwd'}
+        docker {
+            image 'jftanner/jenkins-agent'
+            args '-v /etc/passwd:/etc/passwd'
+        }
     }
 
     environment {
