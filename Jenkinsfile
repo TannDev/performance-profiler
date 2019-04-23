@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent {
-        docker { image 'jftanner/jenkins-agent' }
-    }
+    agent docker
 
     stages {
         stage('Build') {
