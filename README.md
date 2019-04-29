@@ -1,5 +1,7 @@
 # Performance Profiler
+[![GitHub release](https://img.shields.io/github/release/tanndev/performance-profiler.svg)](https://github.com/tanndev/performance-profiler/releases)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
 
 Stayed tuned for speed!
 
