@@ -102,7 +102,7 @@ Tasks start in the "Pending" state and are automatically added to global trackin
 **Example**  
 ```js
 // Import the module.
-const Profiler = require('./Profiler');
+const Profiler = require('performance-profiler');
 
 // Get a task instance, with a friendly name.
 let myTask = new Profiler("Just Some Stuff");
