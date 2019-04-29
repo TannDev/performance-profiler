@@ -9,6 +9,12 @@
 
 Stayed tuned for speed!
 
+## Installation
+![node](https://img.shields.io/node/v/performance-profiler.svg)
+```bash
+npm install --save performance-profiler
+```
+
 ## Usage
 ```javascript
 const Profiler = require('performance-profiler');
