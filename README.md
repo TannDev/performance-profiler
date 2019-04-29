@@ -1,5 +1,6 @@
 # Performance Profiler
 [![GitHub release](https://img.shields.io/github/release/tanndev/performance-profiler.svg)](https://github.com/tanndev/performance-profiler/releases)
+[![Build Status](https://jenkins.tanndev.com/buildStatus/icon?job=Tanndev%2Fperformance-profiler%2Fmaster)](https://jenkins.tanndev.com/job/Tanndev/job/performance-profiler/job/master/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 
