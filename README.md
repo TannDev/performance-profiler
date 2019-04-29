@@ -44,7 +44,7 @@ console.log(Profiler.csv());
 For more details, see the [API documentation](#api-documentation).
 
 ## Development
-See our [contributing guidelines](CONTRIBUTING.md) before you get started.
+**Made sure to review our [contributing guidelines](CONTRIBUTING.md) before you get started.**
 
 ### Running Tests
 You can run the full suite of tests with `npm test`.
@@ -52,11 +52,11 @@ You can run the full suite of tests with `npm test`.
 To run only the basic tests, and skip the longer ones, you can use `npm test -- --quickly` instead. (Please be aware that _all_ tests must pass before a pull request will be accepted.)
 
 ### CI/CD
-The build pipeline will automatically test all branches and PRs.
+The build pipeline will automatically test all branches and PRs. A successful test is required before any changes will be accepted into `master`.
 
-When a branch or commit is merged into the `master` branch, the pipeline will test it again. Assuming all tests pass, semantic-release will determine an appropriate version number and publish it if required.
+When a branch or commit is merged into the `master` branch, semantic-release will automatically determine an appropriate version number and publish it if required.
 
-**Remember:** Because version numbers are automatically determined by semantic-release, it's important that you use the appropriate commit format. If you fail to do this, then your commits will need to be squashed into a new one before your PR can be merged.
+**Remember:** Because version numbers are automatically determined by semantic-release, it's important that you use the appropriate commit format. If you fail to do this, then your commits may need to be squashed into a new one before your PR can be merged.
 
 # API Documentation
 (_The following documentation is generated automatically._)
