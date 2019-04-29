@@ -1,9 +1,8 @@
 # Performance Profiler
-[![GitHub release](https://img.shields.io/github/release/tanndev/performance-profiler.svg?label=Latest%20Release)
-](https://github.com/tanndev/performance-profiler/releases)
+[![GitHub release](https://img.shields.io/github/release/tanndev/performance-profiler.svg?label=Latest%20Release)](https://github.com/tanndev/performance-profiler/releases/latest)
 ![GitHub Release Date](https://img.shields.io/github/release-date/tanndev/performance-profiler.svg)
 [![Build Status](https://jenkins.tanndev.com/buildStatus/icon?job=Tanndev%2Fperformance-profiler%2Fmaster&subject=Latest%20Build)](https://jenkins.tanndev.com/job/Tanndev/job/performance-profiler/job/master/)
-[![npm](https://img.shields.io/npm/dm/performance-profiler.svg?label=NPM%20installs)](https://www.npmjs.com/package/performance-profiler)
+[![NPM Installs](https://img.shields.io/npm/dm/performance-profiler.svg?label=NPM%20installs)](https://www.npmjs.com/package/performance-profiler)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 
