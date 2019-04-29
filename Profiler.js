@@ -39,7 +39,7 @@ let trackedTasks = new Set();
  *
  * @example
  * // Import the module.
- * const Profiler = require('./Profiler');
+ * const Profiler = require('performance-profiler');
  *
  * // Get a task instance, with a friendly name.
  * let myTask = new Profiler("Just Some Stuff");
