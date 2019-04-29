@@ -3,7 +3,7 @@ Stayed tuned for speed!
 
 ## Usage
 ```javascript
-const Profiler = require('./Profiler');
+const Profiler = require('performance-profiler');
 
 // Get a new task object and give it a friendly name.
 let myTask = new Profiler("Stuff that happens");
